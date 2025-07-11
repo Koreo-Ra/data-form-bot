@@ -1,6 +1,6 @@
 # 🧾 data-form-bot — Autofill Web Forms from Google Sheets
 
-## 🇬🇧 Description
+## Description
 
 `data-form-bot` is an automation tool built for transferring applications from **Google Sheets** to a **web form**.  
 Originally created to automate the submission of customer requests for *Ukrtelecom's optical internet service*, this tool significantly reduces manual data entry time.

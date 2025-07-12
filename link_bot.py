@@ -21,7 +21,7 @@ street_keys = ['вул', 'в ул', 'ву л', 'в у л', 'бульвар', 'п
 valid_codes = ['39','68','96','97','98','66','50','95','99','63','67','93','91','92','94','62','73','77']
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-SAMPLE_SPREADSHEET_ID = "1XEShv7g4HOKC3O5hv4OoxHxHPZL_ap4tFzwOyyS3aOg"
+SAMPLE_SPREADSHEET_ID = "1v4-sFcPHpYlvGhlkq_hddcRBuIQtfbbLKR4WonaJ3XM"
 
 def sheets_system(SCOPES, SAMPLE_SPREADSHEET_ID, SAMPLE_RANGE_NAME):
     creds = None
@@ -221,7 +221,7 @@ with open("last_sheet.txt", "r+") as file:
                 break
             else:
                 print("Не правильний ввід, повторіть спробу")
-SAMPLE_RANGE_NAME = f"Березень Оптика Б2С!A{start_sheet}:E{int(start_sheet)+25}"
+SAMPLE_RANGE_NAME = f"Лист1!A{start_sheet}:E{int(start_sheet)+25}"
 
 driver = webdriver.Chrome()
 driver.get("https://optica.ukrtelecom.ua/?utm_source=facebook_fttb&utm_medium=cpc")
@@ -244,9 +244,6 @@ for row in values:
             send_forms_to_website(name, phone, house, street, flat, region, district, city)
             time.sleep(10)
         processed_rows += 1
-
-        with open("last_sheet.txt", "w") as f:
-            f.write(str(int(start_sheet) + processed_rows - 1))
 
     except Exception as e:
         print(f"Помилка при обробці рядка: {row} — {e}")
